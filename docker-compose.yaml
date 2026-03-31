@@ -12,7 +12,7 @@ services:
   user:
     build: ./user
     image: rubiya32/user:1.0.0
-    container_name: catalogue
+    container_name: user
     depends_on:
     - mongodb  
 networks:
