@@ -1,4 +1,3 @@
-
 FROM maven:3.9.14
 EXPOSE 8080
 WORKDIR /app
