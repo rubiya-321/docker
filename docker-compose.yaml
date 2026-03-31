@@ -1,14 +1,20 @@
 services:
   catalogue:
     build: ./catalogue
-    image: joindevops/catalogue:1.0.0
+    image: rubiya32/catalogue:1.0.0
     container_name: catalogue
     depends_on:
     - mongodb
   mongodb:
     build: ./mongodb # it moves to mongodb directory
-    image: joindevops/mongodb:1.0.0 # docker build -t joindevops/mongodb:1.0.0
+    image: rubiya32/mongodb:1.0.0 
     container_name: mongodb    
+  user:
+    build: ./user
+    image: rubiya32/user:1.0.0
+    container_name: catalogue
+    depends_on:
+    - mongodb  
 networks:
   default:
     driver: bridge
