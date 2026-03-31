@@ -1,0 +1,12 @@
+services:
+  catalogue:
+    build: ./catalogue
+    image: joindevops/catalogue:1.0.0
+    container_name: catalogue
+    depends_on:
+    - mongodb
+networks:
+  default:
+    driver: bridge
+    name: roboshop
+    external: false # if true, you need to create network manually    
