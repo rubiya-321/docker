@@ -1,10 +1,10 @@
 FROM node:20
+# this creates /app and move there
 WORKDIR /app
 COPY package.json .
 COPY *.js .
 RUN npm install
 ENV MONGO="true" \
-    REDIS_URL="redis://redis:6379"\
-    MONGO_URL="mongodb://mongodb:27017/catalogue"
-    
-CMD ["node","server.js"]
+    MONGO_URL="mongodb://mongodb:27017/catalogue" \
+    REDIS_URL="redis://redis:6379"
+CMD ["node", "server.js"]
