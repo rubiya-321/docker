@@ -14,7 +14,8 @@ services:
     image: rubiya32/user:1.0.0
     container_name: user
     depends_on:
-    - mongodb  
+    - mongodb
+    - redis  
   cart:
     build: ./cart
     image: rubiya32/cart:1.0.0
