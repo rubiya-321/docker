@@ -5,6 +5,10 @@ services:
     container_name: catalogue
     depends_on:
     - mongodb
+  mongodb:
+    build: ./mongodb # it moves to mongodb directory
+    image: joindevops/mongodb:1.0.0 # docker build -t joindevops/mongodb:1.0.0
+    container_name: mongodb    
 networks:
   default:
     driver: bridge
